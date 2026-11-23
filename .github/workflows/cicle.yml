@@ -1,0 +1,46 @@
+# Cada 20 minuts en horari laboral: pont de respostes, enviament d'1 correu i entrega de webs pagades.
+name: Cicle (respostes, enviaments, entregues)
+on:
+  schedule:
+    - cron: "*/20 7-18 * * 1-5"   # UTC; el script només envia dins HORA_INICIO-HORA_FIN (hora de Madrid)
+  workflow_dispatch:
+concurrency:
+  group: webs-dades
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  cicle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      TZ: Europe/Madrid
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -q requests jinja2 markupsafe
+      - name: Configuració
+        env:
+          CONFIG_ENV: ${{ secrets.CONFIG_ENV }}
+        run: |
+          if [ -z "$CONFIG_ENV" ]; then echo "Falta el secret CONFIG_ENV"; exit 1; fi
+          printf '%s\n' "$CONFIG_ENV" > config.env
+          echo "MAX_POR_EJECUCION=1" >> config.env
+      - name: Pont de respostes
+        run: python 7_relay.py
+      - name: Enviaments i seguiments
+        run: python 5_enviar.py --real
+      - name: Entrega de webs pagades
+        run: python 6_entregar.py
+      - name: Desa canvis
+        if: always()
+        run: |
+          rm -f config.env
+          git config user.name "Claude"
+          git config user.email "noreply@anthropic.com"
+          git add datos/leads.json datos/leads.csv 2>/dev/null || true
+          git diff --cached --quiet || (git commit -qm "Dades: cicle $(date +'%Y-%m-%d %H:%M')" && git pull -q --rebase && git push -q)

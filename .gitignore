@@ -1,0 +1,5 @@
+config.env
+salida/
+__pycache__/
+*.log
+datos/*.tmp
