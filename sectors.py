@@ -28,6 +28,7 @@ PASSOS_OFICI = [
 
 SECTORS = {
     "taller": {
+        "ofici": False,
         "tipus": "Taller mecànic",
         "schema": "AutoRepair",
         "sub": "Taller mecànic a {muni}. Revisions, reparacions i manteniment de totes les marques, amb pressupost clar abans de començar.",
@@ -51,6 +52,7 @@ SECTORS = {
         ],
     },
     "lampista": {
+        "ofici": True,
         "tipus": "Lampisteria",
         "schema": "Plumber",
         "sub": "Lampistes a {muni} i rodalia. Aigua, calefacció i gas, reparacions urgents i instal·lacions noves, amb pressupost clar abans de començar.",
@@ -72,6 +74,7 @@ SECTORS = {
         ],
     },
     "electricista": {
+        "ofici": True,
         "tipus": "Electricista",
         "schema": "Electrician",
         "sub": "Electricistes a {muni} i rodalia. Avaries, instal·lacions i butlletins, amb pressupost clar abans de començar.",
@@ -93,6 +96,7 @@ SECTORS = {
         ],
     },
     "reformes": {
+        "ofici": True,
         "tipus": "Reformes",
         "schema": "GeneralContractor",
         "sub": "Reformes a {muni} i rodalia. Cuines, banys i pisos sencers, amb pressupost tancat i terminis clars.",
@@ -116,6 +120,7 @@ SECTORS = {
         ],
     },
     "pintor": {
+        "ofici": True,
         "tipus": "Pintor",
         "schema": "HousePainter",
         "sub": "Pintors a {muni} i rodalia. Pisos, cases, façanes i locals, nets i en el termini acordat.",
@@ -137,6 +142,7 @@ SECTORS = {
         ],
     },
     "fuster": {
+        "ofici": True,
         "tipus": "Fusteria",
         "schema": "HomeAndConstructionBusiness",
         "sub": "Fusteria a {muni}. Mobles a mida, portes, armaris i cuines, fets aquí i ben acabats.",
@@ -176,3 +182,39 @@ def detectar(*textos):
         if any(p in t for p in paraules):
             return sector
     return None
+
+
+# ── Il·lustracions per als oficis (fons). Tot en currentColor; s'acoloreixen amb CSS. ──
+MANETES = Markup('''<svg class="manetes" data-par=".12" viewBox="0 0 220 270" aria-hidden="true"><g fill="currentColor">
+<path d="M76 46 Q78 18 104 18 Q130 18 132 46 Z"/><path d="M128 40 h26 a5 5 0 0 1 0 10 h-26 z"/>
+<circle cx="104" cy="54" r="21"/><rect x="96" y="72" width="16" height="10" rx="3"/>
+<path d="M60 86 Q104 74 148 86 L156 160 L52 160 Z"/>
+<path d="M62 88 L40 150 L54 156 L76 106 Z"/><circle cx="46" cy="156" r="9"/>
+<path d="M146 88 L176 60 L186 70 L156 108 Z"/><circle cx="182" cy="62" r="9"/>
+<path d="M176 62 L204 14 L214 20 L188 66 Z"/><path d="M196 6 a16 16 0 1 1 22 22 l-9-3 4-8-6-6-8 4z"/>
+<rect x="50" y="158" width="108" height="12" rx="3"/><rect x="136" y="166" width="7" height="40" rx="2"/><rect x="126" y="164" width="27" height="10" rx="2"/>
+<path d="M56 172 L62 248 L94 248 L100 186 L108 186 L114 248 L146 248 L152 172 Z"/>
+<path d="M56 246 h42 a6 6 0 0 1 6 6 v8 h-48 z"/><path d="M112 246 h42 a6 6 0 0 1 6 6 v8 h-48 z"/>
+</g><g fill="var(--bgcut,#111)" opacity=".35"><path d="M84 98 h40 v58 h-40 z"/><rect x="78" y="88" width="8" height="20" rx="3"/><rect x="122" y="88" width="8" height="20" rx="3"/></g></svg>''')
+
+EINES = {
+    "lampista": '<path d="M38 172 L120 70 L138 84 L56 186 Z"/><path d="M112 40 l34 -22 30 30 -22 34 -14 -10 12 -18 -10 -10 -18 12 z"/><rect x="104" y="60" width="44" height="22" rx="4" transform="rotate(-50 126 71)"/>',
+    "electricista": '<path d="M118 6 L46 112 h50 L72 194 L156 80 h-52 Z"/>',
+    "reformes": '<path d="M100 8 L168 76 L100 144 L32 76 Z"/><rect x="92" y="138" width="16" height="22" rx="3"/><rect x="86" y="156" width="28" height="40" rx="10"/>',
+    "pintor": '<rect x="22" y="24" width="136" height="48" rx="12"/><path d="M158 44 h16 v52 h-76 v26" fill="none" stroke="currentColor" stroke-width="10"/><rect x="88" y="118" width="20" height="78" rx="8"/>',
+    "fuster": '<path d="M20 120 L150 40 L176 86 L46 166 Z"/><path d="M46 166 l-6 -10 m22 0 l-6 -10 m22 0 l-6 -10 m22 0 l-6 -10 m22 0 l-6 -10 m22 0 l-6 -10" stroke="currentColor" stroke-width="5"/><path d="M150 40 l30 -18 18 30 -22 34 z"/>',
+}
+
+
+def eina(sector):
+    return Markup(f'<svg class="wheel eina" data-spin=".06" viewBox="0 0 200 200" aria-hidden="true"><g fill="currentColor">{EINES.get(sector, EINES["reformes"])}</g></svg>')
+
+
+PENJADOR = Markup('''<svg class="penjador" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="currentColor">
+<g transform="rotate(-14 50 60)"><rect x="40" y="22" width="18" height="86" rx="6"/><rect x="14" y="8" width="70" height="26" rx="7"/></g>
+<g transform="rotate(18 352 52)"><rect x="344" y="40" width="14" height="96" rx="6"/><path d="M330 24 a24 24 0 1 1 42 0 l-12 5 -9 -14 -9 14 z"/></g>
+<g transform="rotate(-8 60 350)"><path d="M6 330 h104 l14 38 h-132 z"/><rect x="104" y="314" width="20" height="46" rx="7"/></g>
+<g transform="rotate(12 350 340)"><rect x="306" y="300" width="80" height="26" rx="8"/><rect x="338" y="324" width="16" height="70" rx="6"/></g>
+<g transform="rotate(-30 22 200)"><rect x="14" y="160" width="12" height="60" rx="6"/><path d="M16 220 h8 l2 44 h-12 z"/></g>
+<g transform="rotate(24 384 200)"><rect x="376" y="170" width="12" height="70" rx="5"/></g>
+</g></svg>''')

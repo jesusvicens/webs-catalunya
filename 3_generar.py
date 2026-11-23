@@ -16,7 +16,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup
 
 from comun import RAIZ, SALIDA, cargar_config, cargar_leads, guardar_leads
-from sectors import SECTORS
+from sectors import SECTORS, MANETES, PENJADOR, eina
 
 # Colores de taller: (acento, texto sobre el acento)
 COLORES = [
@@ -188,7 +188,7 @@ def contexto(l, cfg, demo=True):
         "resenas": l.get("resenas") or [],
         "horario": hor, "horario_json": json.dumps([x["horas"] for x in hor], ensure_ascii=False),
         "servicios": [{"titol": a, "text": b, "icono": c} for a, b, c in sec["serveis"]],
-        "sec": sec,
+        "sec": sec, "manetes": MANETES, "penjador": PENJADOR, "eina": eina(l.get("sector") or "taller"),
         "titular_1": t1, "titular_2": t2, "subtitulo": sub,
         "color": COLORES[h % len(COLORES)][0], "color_txt": COLORES[h % len(COLORES)][1],
         "remitente": cfg.get("REMITENTE_NOMBRE", ""), "email_remitente": cfg.get("EMAIL_USER", ""),

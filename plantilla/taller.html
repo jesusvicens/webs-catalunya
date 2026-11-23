@@ -274,6 +274,15 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   .blob,.final:before{animation:none!important}
   .js .ln>span,.js .hero .rating,.js .hero .lead,.js .hero .ctas,.js .hero .now{animation:none!important;opacity:1;transform:none}
 }
+
+/* oficis: tauler d'eines, manetes i eina del sector */
+.tag2{white-space:nowrap;font-family:Archivo,sans-serif;font-stretch:85%;font-weight:700;font-size:.85rem;letter-spacing:.04em;background:var(--acc);color:var(--acc-txt);border-radius:999px;padding:5px 12px;flex-shrink:0}
+.visual.ofici{background-color:var(--tint);background-image:radial-gradient(color-mix(in srgb,var(--ink) 16%,transparent) 2.2px,transparent 2.6px);background-size:26px 26px;background-position:13px 13px}
+.visual.ofici:before{display:none}
+.penjador{position:absolute;inset:0;width:100%;height:100%;color:color-mix(in srgb,var(--acc) 34%,transparent);pointer-events:none}
+.manetes{position:absolute;width:430px;height:auto;right:-30px;bottom:-60px;color:color-mix(in srgb,#fff 7%,transparent);--bgcut:#000;pointer-events:none;will-change:transform;z-index:0}.dark>.wrap{position:relative;z-index:1}
+.final .eina{width:440px;height:440px;right:-40px;bottom:-110px;top:auto;color:color-mix(in srgb,#fff 16%,transparent)}
+@media(max-width:760px){.manetes{width:240px;right:-80px;bottom:-20px}.final .eina{width:300px;height:300px;right:-70px;bottom:-80px}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -303,10 +312,10 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
     <p class="now" data-now>{{ municipio }}</p>
   </div>
 
-  <div class="visual" data-i="{{ inicial }}" data-par="-.06"><aside class="slip" data-tilt aria-label="Com treballem">
+  <div class="visual{% if sec.ofici %} ofici{% endif %}" data-i="{{ inicial }}" data-par="-.06">{% if sec.ofici %}{{ penjador }}{% endif %}<aside class="slip" data-tilt aria-label="Com treballem">
     <div class="slip-h">
       <div><small class="label">{{ sec.slip.label }}</small><div class="sign">{{ sec.slip.titol }}</div></div>
-      <span class="plate">{{ sec.slip.placa }}</span>
+      {% if sec.ofici %}<span class="tag2">{{ sec.slip.placa }}</span>{% else %}<span class="plate">{{ sec.slip.placa }}</span>{% endif %}
     </div>
     <ul>
       {% for it, nota in sec.slip.passes %}<li><span class="box"></span><span>{{ it }}</span><span class="hand">{{ nota }}</span></li>
@@ -333,7 +342,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   </div>
 </div></section>
 
-<section class="dark" id="com-funciona"><svg class="wheel" data-spin=".18" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="currentColor"><circle cx="100" cy="100" r="91" stroke-width="15"/><circle cx="100" cy="100" r="99.5" stroke-width="3" stroke-dasharray="5 7"/><circle cx="100" cy="100" r="71" stroke-width="2.5"/><circle cx="100" cy="100" r="66" stroke-width="1"/><circle cx="100" cy="100" r="20" stroke-width="3"/></g><g fill="currentColor"><path d="M100.0 80.0 L92.3 36.5 L107.7 36.5Z"/><path d="M119.0 93.8 L158.1 73.1 L162.8 87.7Z"/><path d="M111.8 116.2 L143.5 146.9 L131.1 155.9Z"/><path d="M88.2 116.2 L68.9 155.9 L56.5 146.9Z"/><path d="M81.0 93.8 L37.2 87.7 L41.9 73.1Z"/><circle cx="100" cy="100" r="5"/><circle cx="106.5" cy="91.1" r="2.4"/><circle cx="110.5" cy="103.4" r="2.4"/><circle cx="100.0" cy="111.0" r="2.4"/><circle cx="89.5" cy="103.4" r="2.4"/><circle cx="93.5" cy="91.1" r="2.4"/></g></svg><div class="wrap">
+<section class="dark" id="com-funciona">{% if sec.ofici %}{{ manetes }}{% else %}<svg class="wheel" data-spin=".18" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="currentColor"><circle cx="100" cy="100" r="91" stroke-width="15"/><circle cx="100" cy="100" r="99.5" stroke-width="3" stroke-dasharray="5 7"/><circle cx="100" cy="100" r="71" stroke-width="2.5"/><circle cx="100" cy="100" r="66" stroke-width="1"/><circle cx="100" cy="100" r="20" stroke-width="3"/></g><g fill="currentColor"><path d="M100.0 80.0 L92.3 36.5 L107.7 36.5Z"/><path d="M119.0 93.8 L158.1 73.1 L162.8 87.7Z"/><path d="M111.8 116.2 L143.5 146.9 L131.1 155.9Z"/><path d="M88.2 116.2 L68.9 155.9 L56.5 146.9Z"/><path d="M81.0 93.8 L37.2 87.7 L41.9 73.1Z"/><circle cx="100" cy="100" r="5"/><circle cx="106.5" cy="91.1" r="2.4"/><circle cx="110.5" cy="103.4" r="2.4"/><circle cx="100.0" cy="111.0" r="2.4"/><circle cx="89.5" cy="103.4" r="2.4"/><circle cx="93.5" cy="91.1" r="2.4"/></g></svg>{% endif %}<div class="wrap">
   <div class="head"><div><div class="label">Com treballem</div><h2 class="sign">Sense sorpreses</h2></div></div>
   <div class="flow" data-flow>
     <div class="track"><i></i></div>
@@ -382,7 +391,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   </div>
 </div></section>
 
-<section class="final"><svg class="wheel" data-spin="-.12" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="currentColor"><circle cx="100" cy="100" r="91" stroke-width="15"/><circle cx="100" cy="100" r="99.5" stroke-width="3" stroke-dasharray="5 7"/><circle cx="100" cy="100" r="71" stroke-width="2.5"/><circle cx="100" cy="100" r="66" stroke-width="1"/><circle cx="100" cy="100" r="20" stroke-width="3"/></g><g fill="currentColor"><path d="M100.0 80.0 L92.3 36.5 L107.7 36.5Z"/><path d="M119.0 93.8 L158.1 73.1 L162.8 87.7Z"/><path d="M111.8 116.2 L143.5 146.9 L131.1 155.9Z"/><path d="M88.2 116.2 L68.9 155.9 L56.5 146.9Z"/><path d="M81.0 93.8 L37.2 87.7 L41.9 73.1Z"/><circle cx="100" cy="100" r="5"/><circle cx="106.5" cy="91.1" r="2.4"/><circle cx="110.5" cy="103.4" r="2.4"/><circle cx="100.0" cy="111.0" r="2.4"/><circle cx="89.5" cy="103.4" r="2.4"/><circle cx="93.5" cy="91.1" r="2.4"/></g></svg><div class="wrap">
+<section class="final">{% if sec.ofici %}{{ eina }}{% else %}<svg class="wheel" data-spin="-.12" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="currentColor"><circle cx="100" cy="100" r="91" stroke-width="15"/><circle cx="100" cy="100" r="99.5" stroke-width="3" stroke-dasharray="5 7"/><circle cx="100" cy="100" r="71" stroke-width="2.5"/><circle cx="100" cy="100" r="66" stroke-width="1"/><circle cx="100" cy="100" r="20" stroke-width="3"/></g><g fill="currentColor"><path d="M100.0 80.0 L92.3 36.5 L107.7 36.5Z"/><path d="M119.0 93.8 L158.1 73.1 L162.8 87.7Z"/><path d="M111.8 116.2 L143.5 146.9 L131.1 155.9Z"/><path d="M88.2 116.2 L68.9 155.9 L56.5 146.9Z"/><path d="M81.0 93.8 L37.2 87.7 L41.9 73.1Z"/><circle cx="100" cy="100" r="5"/><circle cx="106.5" cy="91.1" r="2.4"/><circle cx="110.5" cy="103.4" r="2.4"/><circle cx="100.0" cy="111.0" r="2.4"/><circle cx="89.5" cy="103.4" r="2.4"/><circle cx="93.5" cy="91.1" r="2.4"/></g></svg>{% endif %}<div class="wrap">
   <div><div class="label">Pressupost sense compromís</div><h2 class="sign">Truca'ns i<br>en parlem</h2></div>
   <div class="ctas">
     <a href="tel:{{ telefono_tel }}" class="btn btn-a">{{ i_phone }}{{ telefono }}</a>
