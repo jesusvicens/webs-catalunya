@@ -32,7 +32,7 @@ jobs:
           if [ -z "$CONFIG_ENV" ]; then echo "Falta el secret CONFIG_ENV"; exit 1; fi
           printf '%s\n' "$CONFIG_ENV" > config.env
       - name: Descarrega la comarca següent (Apify)
-        if: github.event_name == 'schedule'
+        if: github.event_name != 'push'
         run: python 1_apify.py
       - name: Importa negocis nous (datos/entrada/<Comarca>__*.json)
         run: |
