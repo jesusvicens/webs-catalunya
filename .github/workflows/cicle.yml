@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
-      - run: pip install -q requests jinja2 markupsafe
+      - run: pip install -q -r requirements.txt
       - name: Configuració
         env:
           CONFIG_ENV: ${{ secrets.CONFIG_ENV }}
