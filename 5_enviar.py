@@ -28,7 +28,8 @@ def texto_motivo(l):
     if not partes:
         partes = [MOTIVOS["sin_web"]]
     frase = partes[0] if len(partes) == 1 else ", ".join(partes[:-1]) + " i " + partes[-1]
-    return frase.format(municipio=l["municipio"])
+    from mensajes import CERCA
+    return frase.format(municipio=l["municipio"], cerca=CERCA.get(l.get("sector") or "taller", "un negoci com el vostre"))
 
 
 def componer(l, paso, cfg):
@@ -39,6 +40,17 @@ def componer(l, paso, cfg):
         "precio": cfg.get("PRECIO_UNICO"), "precio_mes": cfg.get("PRECIO_MES"),
         "firma": cfg.get("REMITENTE_FIRMA"), "remitente": cfg.get("REMITENTE_NOMBRE"),
     }
+    from mensajes import CERCA
+    v["cerca"] = CERCA.get(l.get("sector") or "taller", "un negoci com el vostre")
+    comarca = l.get("comarca") or ("Osona" if not l.get("sector") or l.get("sector") == "taller" else "")
+    from mensajes import DE_COMARCA
+    v["de_zona"] = DE_COMARCA.get(comarca, "de la zona") if comarca else "de la zona"
+    if (l.get("n_resenas") or 0) >= 5 and (l.get("rating") or 0) >= 4:
+        v["intro"] = f"He vist que {v['nombre_corto']} té {v['n_resenas']} opinions a Google amb un {v['rating']}, però {v['motivo']}."
+    else:
+        v["intro"] = f"He vist {v['nombre_corto']} a Google, però {v['motivo']}."
+    if comarca and comarca != "Osona":
+        v["firma"] = (v["firma"] or "").replace("d'Osona", v["de_zona"])
     asunto = ASUNTO.format(**v)
     return (asunto if paso == 0 else "Re: " + asunto), PASOS[paso].format(**v)
 
