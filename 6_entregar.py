@@ -131,7 +131,12 @@ def main():
         return
 
     nous = 0
-    for slug, p in pagaments(cfg).items():
+    try:
+        pagats = pagaments(cfg)
+    except requests.HTTPError as e:
+        print(f"! Stripe no accepta la clau ({e.response.status_code}): reviseu STRIPE_SECRET_KEY. No es comproven pagaments.")
+        pagats = {}
+    for slug, p in pagats.items():
         l = per_slug.get(slug)
         if not l:
             print(f"! Pagament amb referència desconeguda: {slug} ({p['email']}) — revisa-ho a Stripe")
