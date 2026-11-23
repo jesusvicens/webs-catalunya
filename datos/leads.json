@@ -11376,13 +11376,14 @@
   "sector": "electricista",
   "lat": 41.9404699,
   "lng": 2.2488824,
-  "estado": "objetivo",
+  "estado": "descartado",
   "creado": "2026-11-23T10:56:59",
   "envios": [],
   "font": "apify",
   "motivo": "no_https",
   "generado": true,
-  "demo_url": "https://websosona.netlify.app/insuntec-technology-sl-vic/"
+  "demo_url": "https://websosona.netlify.app/insuntec-technology-sl-vic/",
+  "motivo_descarte": "no és ofici de la llar"
  },
  "ChIJ7zjygeQmpRIRDdjHmzvCmnk": {
   "id": "ChIJ7zjygeQmpRIRDdjHmzvCmnk",
@@ -12369,13 +12370,14 @@
   "sector": "electricista",
   "lat": 41.9237783,
   "lng": 2.2490278,
-  "estado": "objetivo",
+  "estado": "descartado",
   "creado": "2026-11-23T10:56:59",
   "envios": [],
   "font": "apify",
   "motivo": "no_https",
   "generado": true,
-  "demo_url": "https://websosona.netlify.app/brokergie-vic/"
+  "demo_url": "https://websosona.netlify.app/brokergie-vic/",
+  "motivo_descarte": "no és ofici de la llar"
  },
  "ChIJazywmQsnpRIRV2lsKw3QwRQ": {
   "id": "ChIJazywmQsnpRIRV2lsKw3QwRQ",
@@ -12457,13 +12459,14 @@
   "sector": "electricista",
   "lat": 41.9420233,
   "lng": 2.2518468,
-  "estado": "objetivo",
+  "estado": "descartado",
   "creado": "2026-11-23T10:56:59",
   "envios": [],
   "font": "apify",
   "motivo": "no_https",
   "generado": true,
-  "demo_url": "https://websosona.netlify.app/rotecnia-electricidad-industrial-sl-vic/"
+  "demo_url": "https://websosona.netlify.app/rotecnia-electricidad-industrial-sl-vic/",
+  "motivo_descarte": "no és ofici de la llar"
  },
  "ChIJI705rkAmpRIRI1ZWWwf21iY": {
   "id": "ChIJI705rkAmpRIRI1ZWWwf21iY",
@@ -14368,13 +14371,14 @@
   "sector": "reformes",
   "lat": 41.9259301,
   "lng": 2.2466918,
-  "estado": "objetivo",
+  "estado": "descartado",
   "creado": "2026-11-23T10:56:59",
   "envios": [],
   "font": "apify",
   "motivo": "no_movil",
   "generado": true,
-  "demo_url": "https://websosona.netlify.app/abaq-la-gestoria-digital-pro-para-autonomos-vic/"
+  "demo_url": "https://websosona.netlify.app/abaq-la-gestoria-digital-pro-para-autonomos-vic/",
+  "motivo_descarte": "no és ofici de la llar"
  },
  "ChIJnSWwFYMlpRIRPD9NH_6rgaE": {
   "id": "ChIJnSWwFYMlpRIRPD9NH_6rgaE",
@@ -14396,13 +14400,14 @@
   "sector": "electricista",
   "lat": 42.0122265,
   "lng": 2.2940433,
-  "estado": "objetivo",
+  "estado": "descartado",
   "creado": "2026-11-23T10:56:59",
   "envios": [],
   "font": "apify",
   "motivo": "web_caida",
   "generado": true,
-  "demo_url": "https://websosona.netlify.app/inpro-automation-s-l-manlleu/"
+  "demo_url": "https://websosona.netlify.app/inpro-automation-s-l-manlleu/",
+  "motivo_descarte": "no és ofici de la llar"
  },
  "ChIJd4WgJiYnpRIRamlq91HxZjU": {
   "id": "ChIJd4WgJiYnpRIRamlq91HxZjU",

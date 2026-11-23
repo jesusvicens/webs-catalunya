@@ -13,7 +13,8 @@ from sectors import detectar
 CADENES = ("leroy", "bricomart", "bauhaus", "obramat", "norauto", "midas", "feu vert", "endesa", "iberdrola",
            "naturgy", "repsol", "securitas", "prosegur", "homeserve", "ralarsa")
 NO_OFICI = ("arquitect", "estudio de arquitectura", "interiorista", "tienda", "botiga", "ferreter", "supermerc",
-            "inmobiliari", "immobiliària", "ayuntamiento", "ajuntament", "proveedor", "distribuidor", "mayorista")
+            "inmobiliari", "immobiliària", "ayuntamiento", "ajuntament", "proveedor", "distribuidor", "mayorista",
+            "gestor", "asesor", "assessor", "automat", "broker", "technolog", "ingenier", "enginyer", "industrial")
 
 
 def horari(oh):
@@ -35,7 +36,7 @@ def main():
             continue
         cat = " ".join([p.get("categoryName") or ""] + (p.get("categories") or []))
         nom = (p.get("title") or "").strip()
-        if any(c in nom.lower() for c in CADENES) or any(c in cat.lower() for c in NO_OFICI):
+        if any(c in nom.lower() for c in CADENES) or any(c in (cat + " " + nom).lower() for c in NO_OFICI):
             continue
         sector = detectar(cat, nom, p.get("searchString"))
         if not sector:
