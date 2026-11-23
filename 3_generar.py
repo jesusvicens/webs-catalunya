@@ -16,6 +16,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup
 
 from comun import RAIZ, SALIDA, cargar_config, cargar_leads, guardar_leads
+from sectors import SECTORS
 
 # Colores de taller: (acento, texto sobre el acento)
 COLORES = [
@@ -135,14 +136,14 @@ def nombre_corto(n):
 DIAS_SCHEMA = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
 
-def schema(l, hor, tel_tel, rating, n):
+def schema(l, hor, tel_tel, rating, n, tipus="AutoRepair"):
     """Marcado schema.org de negocio local: ayuda a salir en Google con horario y estrellas."""
     spec = []
     for i, h in enumerate(hor):
         for a, b in re.findall(r"(\d{1,2}:\d{2})–(\d{1,2}:\d{2})", h["horas"]):
             spec.append({"@type": "OpeningHoursSpecification", "dayOfWeek": DIAS_SCHEMA[i],
                          "opens": a.zfill(5), "closes": b.zfill(5)})
-    data = {"@context": "https://schema.org", "@type": "AutoRepair", "name": l["nombre"],
+    data = {"@context": "https://schema.org", "@type": tipus, "name": l["nombre"],
             "telephone": tel_tel, "address": l.get("direccion", ""),
             "areaServed": l["municipio"], "openingHoursSpecification": spec}
     if l.get("email"):
@@ -156,12 +157,12 @@ def schema(l, hor, tel_tel, rating, n):
 
 def contexto(l, cfg, demo=True):
     h = int(hashlib.md5(l["slug"].encode()).hexdigest(), 16)
-    t1, t2 = TITULARES[h % len(TITULARES)]
+    sec = SECTORS.get(l.get("sector") or "taller", SECTORS["taller"])
+    t1, t2 = sec["titulars"][h % len(sec["titulars"])]
     tel, tel_tel, wa = telefono(l.get("telefono"))
     rating = l.get("rating") or 0
     n = l.get("n_resenas") or 0
-    sub = (f"Taller mecànic a {l['municipio']}. Revisions, reparacions i manteniment de totes les marques, "
-           f"amb pressupost clar abans de començar.")
+    sub = sec["sub"].format(muni=l["municipio"])
     if rating >= 4.5 and n >= 15:
         sub += f" {n} clients ens valoren amb un {str(rating).replace('.', ',')}."
     hor = horario(l.get("horario_raw") or {})
@@ -172,13 +173,13 @@ def contexto(l, cfg, demo=True):
     pid_d = f"&destination_place_id={pid}" if pid.startswith("ChIJ") else ""
     nc = nombre_corto(l["nombre"])
     return {
-        "inicial": (re.sub(r"^(taller(s|es)?|auto(s)?|mec[aà]nica)\s+", "", nc, flags=re.I) or nc)[:1].upper(),
+        "inicial": (re.sub(r"^(taller(s|es)?|auto(s)?|mec[aà]nica|instal[·.]?lacions|reformes|reformas|fusteria|pintures?|electricitat)\s+", "", nc, flags=re.I) or nc)[:1].upper(),
         "maps_url": f"https://www.google.com/maps/search/?api=1&query={q}{pid_q}",
         "dir_url": f"https://www.google.com/maps/dir/?api=1&destination={q}{pid_d}",
-        "schema": schema(l, hor, tel_tel, rating, n),
+        "schema": schema(l, hor, tel_tel, rating, n, sec["schema"]),
         "demo": demo,
         "nombre": l["nombre"], "nombre_corto": nombre_corto(l["nombre"]),
-        "municipio": muni, "municipio_corto": muni if len(muni) <= 9 else "Osona",
+        "municipio": muni, "municipio_corto": muni if len(muni) <= 9 else (l.get("comarca") or muni.split()[0])[:12],
         "direccion": l.get("direccion", ""),
         "telefono": tel, "telefono_tel": tel_tel, "whatsapp": wa,
         "email": l.get("email", ""),
@@ -186,7 +187,8 @@ def contexto(l, cfg, demo=True):
         "n_resenas": n,
         "resenas": l.get("resenas") or [],
         "horario": hor, "horario_json": json.dumps([x["horas"] for x in hor], ensure_ascii=False),
-        "servicios": SERVICIOS,
+        "servicios": [{"titol": a, "text": b, "icono": c} for a, b, c in sec["serveis"]],
+        "sec": sec,
         "titular_1": t1, "titular_2": t2, "subtitulo": sub,
         "color": COLORES[h % len(COLORES)][0], "color_txt": COLORES[h % len(COLORES)][1],
         "remitente": cfg.get("REMITENTE_NOMBRE", ""), "email_remitente": cfg.get("EMAIL_USER", ""),
