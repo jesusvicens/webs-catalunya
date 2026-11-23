@@ -56,6 +56,7 @@ def render_final(l, cfg):
     dest = SALIDA / "finales" / l["slug"]
     dest.mkdir(parents=True, exist_ok=True)
     (dest / "index.html").write_text(html, encoding="utf-8")
+    gen.copia_foto(l, dest)
     return dest
 
 

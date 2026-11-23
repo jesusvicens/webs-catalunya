@@ -188,12 +188,20 @@ def contexto(l, cfg, demo=True):
         "resenas": l.get("resenas") or [],
         "horario": hor, "horario_json": json.dumps([x["horas"] for x in hor], ensure_ascii=False),
         "servicios": [{"titol": a, "text": b, "icono": c} for a, b, c in sec["serveis"]],
+        "foto": ("../img/" if demo else "img/") + (l.get("sector") or "taller") + ".jpg",
         "sec": sec, "manetes": MANETES, "penjador": PENJADOR, "eina": eina(l.get("sector") or "taller"),
         "titular_1": t1, "titular_2": t2, "subtitulo": sub,
         "color": COLORES[h % len(COLORES)][0], "color_txt": COLORES[h % len(COLORES)][1],
         "remitente": cfg.get("REMITENTE_NOMBRE", ""), "email_remitente": cfg.get("EMAIL_USER", ""),
         "any": date.today().year,
     }
+
+
+def copia_foto(l, dest):
+    import shutil
+    (dest / "img").mkdir(parents=True, exist_ok=True)
+    nom = (l.get("sector") or "taller") + ".jpg"
+    shutil.copy(RAIZ / "plantilla" / "img" / nom, dest / "img" / nom)
 
 
 def capturar(paginas):
@@ -219,6 +227,7 @@ def main():
         l = next(x for x in leads.values() if x["slug"] == slug)
         dest = SALIDA / "finales" / slug; dest.mkdir(parents=True, exist_ok=True)
         (dest / "index.html").write_text(tpl.render(**contexto(l, cfg, demo=False)), encoding="utf-8")
+        copia_foto(l, dest)
         print(f"✓ Versión final en {dest}/index.html — súbela a su dominio.")
         return
 
@@ -234,6 +243,8 @@ def main():
         hechos += 1
     guardar_leads(leads)
 
+    import shutil
+    shutil.copytree(RAIZ / "plantilla" / "img", sites / "img", dirs_exist_ok=True)
     # raíz del sitio de demos: sin indexar
     (sites / "index.html").write_text("<!doctype html><meta name=robots content=noindex><title>Demos</title>", encoding="utf-8")
     (sites / "_headers").write_text("/*\n  X-Robots-Tag: noindex, nofollow\n", encoding="utf-8")
