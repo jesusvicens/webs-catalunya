@@ -120,7 +120,12 @@ def main():
     pendientes = [l for l in leads.values() if l["estado"] == "nuevo"]
     print(f"Auditando {len(pendientes)} talleres…")
     for l in pendientes:
-        if (l.get("rating") or 0) < MIN_RATING or (l.get("n_resenas") or 0) < 5:
+        ofici = (l.get("sector") or "taller") != "taller"
+        if ofici:  # als oficis hi ha poques ressenyes: només descartem la mala reputació
+            mala_rep = (l.get("n_resenas") or 0) >= 3 and (l.get("rating") or 0) < 4.0
+        else:
+            mala_rep = (l.get("rating") or 0) < MIN_RATING or (l.get("n_resenas") or 0) < 5
+        if mala_rep:
             l["estado"], l["motivo"] = "descartado", "pocas_o_malas_resenas"
             continue
         mala, motivo = auditar(l.get("web"), l)

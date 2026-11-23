@@ -45,7 +45,9 @@ def main():
             e = e.strip().lower()
             if "@" in e and e not in emails and not re.search(r"\.(png|jpg|webp|svg)$|example|sentry|wix", e):
                 emails.append(e)
-        ciutat = p.get("city") or ""
+        ciutat = (p.get("city") or "").strip()
+        if not ciutat or (ciutat == "Barcelona" and comarca != "Barcelonès"):
+            continue  # sense població o adreça fiscal a Barcelona: no sabem on treballen
         loc = p.get("location") or {}
         leads[pid] = {
             "id": pid,

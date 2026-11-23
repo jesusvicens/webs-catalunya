@@ -3,7 +3,7 @@ name: Preparar i publicar demos
 on:
   workflow_dispatch:
   push:
-    paths: ["plantilla/**", "3_generar.py", "mensajes.py"]
+    paths: ["plantilla/**", "3_generar.py", "sectors.py", "datos/entrada/**"]
 concurrency:
   group: webs-dades
   cancel-in-progress: false
@@ -29,6 +29,15 @@ jobs:
         run: |
           if [ -z "$CONFIG_ENV" ]; then echo "Falta el secret CONFIG_ENV"; exit 1; fi
           printf '%s\n' "$CONFIG_ENV" > config.env
+      - name: Importa negocis nous (datos/entrada/<Comarca>__*.json)
+        run: |
+          shopt -s nullglob
+          for f in datos/entrada/*.json; do
+            comarca="$(basename "$f" | sed 's/__.*//')"
+            python importar_apify.py "$f" --comarca "$comarca"
+          done
+      - name: Filtra (audita webs i busca emails)
+        run: python 2_filtrar.py
       - run: python 3_generar.py
       - run: python 4_publicar.py
       - name: Desa canvis
