@@ -1,6 +1,8 @@
 # Regenera totes les demos a partir de datos/leads.json i les publica a Netlify.
 name: Preparar i publicar demos
 on:
+  schedule:
+    - cron: "17 5 * * 1"   # dilluns: comarca nova (si hi ha crèdit d'Apify)
   workflow_dispatch:
   push:
     paths: ["plantilla/**", "3_generar.py", "sectors.py", "datos/entrada/**"]
@@ -12,7 +14,7 @@ permissions:
 jobs:
   preparar:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 120
     env:
       TZ: Europe/Madrid
       PYTHONUTF8: "1"
@@ -29,6 +31,9 @@ jobs:
         run: |
           if [ -z "$CONFIG_ENV" ]; then echo "Falta el secret CONFIG_ENV"; exit 1; fi
           printf '%s\n' "$CONFIG_ENV" > config.env
+      - name: Descarrega la comarca següent (Apify)
+        if: github.event_name == 'schedule'
+        run: python 1_apify.py
       - name: Importa negocis nous (datos/entrada/<Comarca>__*.json)
         run: |
           shopt -s nullglob
@@ -46,5 +51,5 @@ jobs:
           rm -f config.env
           git config user.name "Claude"
           git config user.email "noreply@anthropic.com"
-          git add datos/leads.json datos/leads.csv 2>/dev/null || true
+          git add datos/ 2>/dev/null || true
           git diff --cached --quiet || (git commit -qm "Dades: demos publicades $(date +'%Y-%m-%d %H:%M')" && git pull -q --rebase && git push -q)
