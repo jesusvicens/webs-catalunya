@@ -12,6 +12,7 @@ descartado;Auto-Mecànica Calldetenes;Calldetenes;+34 630 26 99 97;;;pocas_o_mal
 descartado;Jordi Tarrés López;Calldetenes;;;;pocas_o_malas_resenas;5.0;1;;0;;;
 descartado;Jga Control Systems;Calldetenes;+34 615 93 28 34;jga@jgacontrolsystems.com;https://www.jgacontrolsystems.com/;;5;4;;0;;;
 descartado;Construcciones Guzmán;Calldetenes;+34 636 61 11 59;;http://construccionsguzman.com/;pocas_o_malas_resenas;3.9;8;;0;;;
+descartado;Fusteria Bonafacia;Castellterçol;+34 655 91 40 19;fusteriabonafacia@gmail.com;http://www.fusteriabonafacia.com/;;5;1;;0;;;
 descartado;FSMotor Automoció;Centelles;+34 930 96 08 06;;https://fsmotor.es/;pocas_o_malas_resenas;0.0;0;;0;;;
 descartado;GERMANS VILARÓ CENTELLES, SL -Dacia-Service;Centelles;+34 938 81 02 76;gvilarocentelles@gmail.com;https://www.talleres.motrio.es/shop/germans-vilaro-centelles-s-l-7236;;4.8;35;;0;;;
 descartado;Eurorepar JOSEP GRAU CIURÓ, S.L.;Centelles;+34 938 81 03 78;;http://www.eurorepar.es/;;4.5;74;;0;;;
@@ -91,6 +92,7 @@ descartado;Tió Automoció Castrol Service Sant Julià de Vilatorta;Sant Julià 
 descartado;Reformes Torres S.C.P;Sant Julià de Vilatorta;+34 629 36 21 07;reformestorres@hotmail.com;http://www.reformestorres.com/;;5;12;;0;;;
 descartado;As Reformes;Sant Julià de Vilatorta;+34 629 06 23 18;hola@asreformes.cat;http://asreformes.com/;;5;3;;0;;;
 descartado;LEDTRIC;Sant Pere de Torelló;+34 628 91 92 99;;;pocas_o_malas_resenas;3;4;;0;;;
+descartado;AmunT Salvaescales;Sant Quirze Safaja;+34 600 55 76 48;info@amuntsalvaescaleras.es;https://amuntsalvaescaleras.es/;;4.9;14;;0;;;
 descartado;DPRace Motor;Sant Quirze de Besora;+34 634 02 34 23;;;pocas_o_malas_resenas;5.0;1;;0;;;
 descartado;AIMECAT SL;Sant Quirze de Besora;+34 699 46 28 50;info@aimecat.com;http://aimecat.com/;lenta;5;17;;0;;;
 descartado;AutoScratch;Santa Eugènia de Berga;+34 938 83 32 20;info@tallerautoscratch.com;http://www.tallerautoscratch.com/;lenta;4.7;67;;0;;;
@@ -252,6 +254,7 @@ solo_telefono;Matas Instalaciones;Aiguafreda;+34 938 44 11 13;;;sin_web;2.5;2;ht
 solo_telefono;Instalaciones Jdm;Aiguafreda;+34 669 43 66 43;;;sin_web;4.3;3;https://websosona.netlify.app/instalaciones-jdm-aiguafreda/;0;;;
 solo_telefono;Construcciones SOLER-KABA S.L;Aiguafreda;+34 679 64 92 27;;;sin_web;5;2;https://websosona.netlify.app/construcciones-soler-kaba-s-l-aiguafreda/;0;;;
 solo_telefono;Llach Barris Pere;Borgonyà;+34 938 50 45 05;;;sin_web;0;0;https://websosona.netlify.app/llach-barris-pere-borgonya/;0;;;
+solo_telefono;Amador Pérez Ginés;Calders;+34 938 30 80 76;;;sin_web;5;1;https://websosona.netlify.app/amador-perez-gines-calders/;0;;;
 solo_telefono;CALLDETENES MOTOR;Calldetenes;+34 938 86 35 82;;;sin_web;4.8;72;https://websosona.netlify.app/calldetenes-motor-calldetenes/;0;;;
 solo_telefono;TALLERS GALLACH;Calldetenes;+34 699 39 70 39;;;sin_web;5.0;10;https://websosona.netlify.app/tallers-gallach-calldetenes/;0;;;
 solo_telefono;Fontaneria Jordi Curós;Calldetenes;+34 938 89 31 72;;;sin_web;5;1;https://websosona.netlify.app/fontaneria-jordi-curos-calldetenes/;0;;;
@@ -259,6 +262,8 @@ solo_telefono;Obras y Reformas, Luis .A.A Fonseca;Calldetenes;+34 603 12 01 04;;
 solo_telefono;DAMIA GALLACH;Calldetenes;;;;sin_web;0;0;https://websosona.netlify.app/damia-gallach-calldetenes/;0;;;
 solo_telefono;Lampistería Codina S L;Cantonigròs;+34 938 56 55 26;;;sin_web;5;2;https://websosona.netlify.app/lampisteria-codina-s-l-cantonigros/;0;;;
 solo_telefono;Construccions Barris;Cantonigròs;+34 619 63 64 48;;;sin_web;5;2;https://websosona.netlify.app/construccions-barris-cantonigros/;0;;;
+solo_telefono;Instal·lacions Sagués;Castellterçol;+34 938 66 60 24;;;sin_web;4.3;9;https://websosona.netlify.app/installacions-sagues-castelltercol/;0;;;
+solo_telefono;Fusteria Tot Bo;Castellterçol;+34 938 66 82 86;;;sin_web;5;4;https://websosona.netlify.app/fusteria-tot-bo-castelltercol/;0;;;
 solo_telefono;Germans Salvans S.L.;Centelles;+34 938 81 22 22;;;sin_web;4.7;54;https://websosona.netlify.app/germans-salvans-s-l-centelles/;0;;;
 solo_telefono;Mecànica Ollich;Centelles;+34 938 81 11 90;;https://www.boschcarservice.com/es/es/pide-cita%23/booking/classic/landing%3FcustomerId%3D24173256;web_caida;4.6;41;https://websosona.netlify.app/mecanica-ollich-centelles/;0;;;
 solo_telefono;Taller Mecànic Josep Salvans;Centelles;+34 938 81 02 77;;;sin_web;4.7;47;https://websosona.netlify.app/taller-mecanic-josep-salvans-centelles/;0;;;
@@ -271,6 +276,8 @@ solo_telefono;Novo Son;Centelles;+34 938 81 03 51;;;sin_web;5;1;https://websoson
 solo_telefono;Electricitat Rovira Sl;Centelles;+34 938 81 01 35;;;sin_web;1;1;https://websosona.netlify.app/electricitat-rovira-sl-centelles/;0;;;
 solo_telefono;Pintor Restaurador Musach;Centelles;+34 646 93 76 36;;http://www.pintorrestauradormusach.com/;no_https,no_movil;5;4;https://websosona.netlify.app/pintor-restaurador-musach-centelles/;0;;;
 solo_telefono;BUSMEL INSTALACIONES, S.L;Centelles;+34 938 81 22 00;;;sin_web;4.8;4;https://websosona.netlify.app/busmel-instalaciones-s-l-centelles/;0;;;
+solo_telefono;Gileric S.l;Collsuspina;+34 617 61 81 20;;;sin_web;0;0;https://websosona.netlify.app/gileric-s-l-collsuspina/;0;;;
+solo_telefono;Can Forner;Collsuspina;+34 938 30 13 09;;https://www.instagram.com/can_forne_collsuspina/profilecard/?igsh=MTlpY3JydHFlMThhbQ==;sin_web;4.5;1565;https://websosona.netlify.app/can-forner-collsuspina/;0;;;
 solo_telefono;Autoreparació Baulenas;Els Hostalets de Balenyà;+34 938 82 03 06;;;sin_web;4.8;22;https://websosona.netlify.app/autoreparacio-baulenas-els-hostalets-de-balenya/;0;;;
 solo_telefono;Planxa i Pintura David Canet;Els Hostalets de Balenyà;+34 615 56 11 85;;;sin_web;5.0;21;https://websosona.netlify.app/planxa-i-pintura-david-canet-els-hostalets-de-balenya/;0;;;
 solo_telefono;Taller Xevi Oliver;Els Hostalets de Balenyà;+34 938 82 00 39;;http://www.tallerxevioliver.com/;web_caida;4.1;19;https://websosona.netlify.app/taller-xevi-oliver-els-hostalets-de-balenya/;0;;;
@@ -318,6 +325,11 @@ solo_telefono;Bulló Instalaciones y Montajes Eléctricos, Sl;Manlleu;+34 938 50
 solo_telefono;Electricidad gutierrez;Manlleu;+34 637 72 25 93;;;sin_web;5;2;https://websosona.netlify.app/electricidad-gutierrez-manlleu/;0;;;
 solo_telefono;Pinturas Xevi Soler;Manlleu;+34 938 51 35 04;;;sin_web;5;2;https://websosona.netlify.app/pinturas-xevi-soler-manlleu/;0;;;
 solo_telefono;Saborit Riqué, Joan;Manlleu;;;;sin_web;0;0;https://websosona.netlify.app/saborit-rique-joan-manlleu/;0;;;
+solo_telefono;carles cortada;Moià;+34 678 60 57 01;;;sin_web;0;0;https://websosona.netlify.app/carles-cortada-moia/;0;;;
+solo_telefono;Instal·lacions Albert Casas S L;Moià;+34 938 20 99 17;;;sin_web;1;1;https://websosona.netlify.app/installacions-albert-casas-s-l-moia/;0;;;
+solo_telefono;Jet Plus;Moià;+34 938 30 11 34;;;sin_web;0;0;https://websosona.netlify.app/jet-plus-moia/;0;;;
+solo_telefono;Instalaciones Moià;Moià;+34 938 30 00 41;;;sin_web;0;0;https://websosona.netlify.app/instalaciones-moia-moia/;0;;;
+solo_telefono;Josep Tantiñà;Moià;+34 938 30 00 89;;;sin_web;0;0;https://websosona.netlify.app/josep-tantina-moia/;0;;;
 solo_telefono;Instal.lacions J. Fernández;Muntanyola;+34 606 74 24 04;;https://www.tiktok.com/@instalaciones.j.f?_t=ZN-8yxHCsGvCC6&_r=1;sin_web;0;0;https://websosona.netlify.app/instal-lacions-j-fernandez-muntanyola/;0;;;
 solo_telefono;CORNET MOTOR;Roda de Ter;+34 938 54 03 76;;https://www.cornetmotor.es/;web_caida;4.6;40;https://websosona.netlify.app/cornet-motor-roda-de-ter/;0;;;
 solo_telefono;Auto-roda planxisteria;Roda de Ter;+34 938 50 02 12;;http://www.auto-roda.com/;web_caida;4.6;39;https://websosona.netlify.app/auto-roda-planxisteria-roda-de-ter/;0;;;
@@ -345,6 +357,7 @@ solo_telefono;Tomex Car-bus;Santa Eugènia de Berga;+34 938 89 70 70;;;sin_web;4
 solo_telefono;Fernando Bigas Guiteras;Santa Eugènia de Berga;+34 938 86 17 97;;;sin_web;4.6;17;https://websosona.netlify.app/fernando-bigas-guiteras-santa-eugenia-de-berga/;0;;;
 solo_telefono;Planchistería Joan Boix;Santa Eugènia de Berga;+34 938 85 59 05;;;sin_web;4.5;11;https://websosona.netlify.app/planchisteria-joan-boix-santa-eugenia-de-berga/;0;;;
 solo_telefono;Elias;Santa Eugènia de Berga;+34 938 86 39 92;;;sin_web;4.9;9;https://websosona.netlify.app/elias-santa-eugenia-de-berga/;0;;;
+solo_telefono;Jubany Prat Albert;Santa Maria d'Oló;+34 938 38 55 07;;;sin_web;4.5;2;https://websosona.netlify.app/jubany-prat-albert-santa-maria-d-olo/;0;;;
 solo_telefono;Taller Crivillé;Seva;+34 938 84 00 28;;https://tallercriville.com/;web_caida;4.8;89;https://websosona.netlify.app/taller-criville-seva/;0;;;
 solo_telefono;Autos ukumari;Seva;+34 696 91 18 57;;;sin_web;4.9;33;https://websosona.netlify.app/autos-ukumari-seva/;0;;;
 solo_telefono;Planxisteria Seva. S.L.U;Seva;+34 938 84 04 06;;;sin_web;4.4;8;https://websosona.netlify.app/planxisteria-seva-s-l-u-seva/;0;;;
