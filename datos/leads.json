@@ -8784,9 +8784,15 @@
   "categoria": "Taller de chapa y pintura",
   "lat": "41.8779591",
   "lng": "2.2888576",
-  "estado": "objetivo",
+  "estado": "contactado",
   "creado": "2026-11-18T16:32:20",
-  "envios": [],
+  "envios": [
+   {
+    "paso": 0,
+    "fecha": "2026-11-24T11:11:18",
+    "message_id": "<179551507690.3081.12583578747859626198@gmail.com>"
+   }
+  ],
   "motivo": "no_https",
   "generado": true,
   "demo_url": "https://websosona.netlify.app/gerard-costa-taller-de-planxisteria-taradell/"
