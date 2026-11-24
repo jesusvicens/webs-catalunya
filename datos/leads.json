@@ -14397,9 +14397,15 @@
   "sector": "lampista",
   "lat": 41.9240249,
   "lng": 2.2490012,
-  "estado": "objetivo",
+  "estado": "contactado",
   "creado": "2026-11-23T10:56:59",
-  "envios": [],
+  "envios": [
+   {
+    "paso": 0,
+    "fecha": "2026-11-24T11:21:11",
+    "message_id": "<179551567001.3208.17565359950359515436@gmail.com>"
+   }
+  ],
   "font": "apify",
   "motivo": "no_https,no_movil,abandonada,anticuada",
   "generado": true,
