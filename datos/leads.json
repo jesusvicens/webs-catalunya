@@ -184,9 +184,15 @@
   "categoria": "Taller mecánico",
   "lat": "41.93139619999999",
   "lng": "2.2623115",
-  "estado": "objetivo",
+  "estado": "contactado",
   "creado": "2026-11-18T16:32:20",
-  "envios": [],
+  "envios": [
+   {
+    "paso": 0,
+    "fecha": "2026-11-24T11:16:21",
+    "message_id": "<179551537921.3137.17295892172067288142@gmail.com>"
+   }
+  ],
   "motivo": "web_caida",
   "generado": true,
   "demo_url": "https://websosona.netlify.app/osona-motor-vic/"
