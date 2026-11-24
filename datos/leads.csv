@@ -1,6 +1,7 @@
 ﻿estado;nombre;municipio;telefono;email;web;motivo;rating;n_resenas;demo_url;enviados;ultimo_envio;respondio;notas
 contactado;Garaje Estación Vic;Gurb;+34 938 86 01 77;info@garatge-estacio.com;http://www.garatge-estacio.com/;abandonada;4.5;108;https://websosona.netlify.app/garaje-estacion-vic-gurb/;2;2026-11-24T10:34:25;;
 contactado;Rodavic - Taller reparació carrocería i pintura;Gurb;+34 938 89 28 97;info@rodavic.com;http://www.rodavic.com/;no_https,abandonada;5.0;41;https://websosona.netlify.app/rodavic-taller-reparacio-carroceria-i-pintura-gurb/;1;2026-11-24T10:52:17;;
+contactado;M.Terricabras S.L.;Gurb;+34 938 86 24 78;info@terricabras.cat;http://www.terricabras.cat/;no_https;4.7;38;https://websosona.netlify.app/m-terricabras-s-l-gurb/;1;2026-11-24T10:56:02;;
 contactado;Taller Ramon Plana;Sant Quirze de Besora;+34 938 52 92 15;t.ramonplana@gmail.com;http://www.automobilsplana.com/;no_https;4.5;103;https://websosona.netlify.app/taller-ramon-plana-sant-quirze-de-besora/;2;2026-11-24T10:43:44;;
 contactado;Dieselvila Tona, S.L;Tona;+34 938 12 45 85;info@netejafiltreparticules.com;https://www.netejafiltreparticules.com/;abandonada;4.6;54;https://websosona.netlify.app/dieselvila-tona-s-l-tona/;1;2026-11-24T10:48:24;;
 contactado;Auto-reparaciones Casas;Torelló;+34 938 59 27 64;autojcasas@hotmail.com;http://autojcasas.wixsite.com/autojcasas;abandonada;4.6;69;https://websosona.netlify.app/auto-reparaciones-casas-torello/;2;2026-11-24T10:39:38;;
@@ -233,7 +234,6 @@ objetivo;Mirvi motor, S.L.;Aiguafreda;+34 938 44 00 23;mirvimotor@gmail.com;http
 objetivo;Auto Taller Calldetenes;Calldetenes;+34 938 68 99 16;atcmecanic@gmail.com;https://www.facebook.com/autotallercalldetenes/;sin_web;4.8;28;https://websosona.netlify.app/auto-taller-calldetenes-calldetenes/;0;;;
 objetivo;Centelles Motor;Centelles;+34 938 81 04 91;centellesmotor@gmail.com;https://www.facebook.com/centellesmotor/;sin_web;4.9;17;https://websosona.netlify.app/centelles-motor-centelles/;0;;;
 objetivo;osonatech;Els Hostalets de Balenyà;+34 682 13 83 49;info@osonatech.com;http://www.osonatech.com/;web_caida;0;0;https://websosona.netlify.app/osonatech-els-hostalets-de-balenya/;0;;;
-objetivo;M.Terricabras S.L.;Gurb;+34 938 86 24 78;info@terricabras.cat;http://www.terricabras.cat/;no_https;4.7;38;https://websosona.netlify.app/m-terricabras-s-l-gurb/;0;;;
 objetivo;Obras Codinachs Canellas, S.L.;Sant Julià de Vilatorta;+34 667 52 66 47;toni@codinachs.cat;http://codinachs.cat/;no_movil;0;0;https://websosona.netlify.app/obras-codinachs-canellas-s-l-sant-julia-de-vilatorta/;0;;;
 objetivo;Gerard Costa taller de planxisteria;Taradell;+34 633 53 92 39;gc.planxisteria@hotmail.com;http://gerardcosta.cat/;no_https;4.8;26;https://websosona.netlify.app/gerard-costa-taller-de-planxisteria-taradell/;0;;;
 objetivo;Picó Motor;Tona;+34 938 12 43 30;picomotor@picomotor.net;http://picomotor.net/;no_https;4.4;23;https://websosona.netlify.app/pico-motor-tona/;0;;;
