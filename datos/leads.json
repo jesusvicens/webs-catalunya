@@ -4464,9 +4464,15 @@
   "categoria": "Mecànic",
   "lat": "41.8517638",
   "lng": "2.2360277",
-  "estado": "objetivo",
+  "estado": "contactado",
   "creado": "2026-11-18T16:32:20",
-  "envios": [],
+  "envios": [
+   {
+    "paso": 0,
+    "fecha": "2026-11-24T10:48:24",
+    "message_id": "<179551370280.2689.58167731768260300@gmail.com>"
+   }
+  ],
   "motivo": "abandonada",
   "generado": true,
   "demo_url": "https://websosona.netlify.app/dieselvila-tona-s-l-tona/"

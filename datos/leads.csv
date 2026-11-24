@@ -1,6 +1,7 @@
 ﻿estado;nombre;municipio;telefono;email;web;motivo;rating;n_resenas;demo_url;enviados;ultimo_envio;respondio;notas
 contactado;Garaje Estación Vic;Gurb;+34 938 86 01 77;info@garatge-estacio.com;http://www.garatge-estacio.com/;abandonada;4.5;108;https://websosona.netlify.app/garaje-estacion-vic-gurb/;2;2026-11-24T10:34:25;;
 contactado;Taller Ramon Plana;Sant Quirze de Besora;+34 938 52 92 15;t.ramonplana@gmail.com;http://www.automobilsplana.com/;no_https;4.5;103;https://websosona.netlify.app/taller-ramon-plana-sant-quirze-de-besora/;2;2026-11-24T10:43:44;;
+contactado;Dieselvila Tona, S.L;Tona;+34 938 12 45 85;info@netejafiltreparticules.com;https://www.netejafiltreparticules.com/;abandonada;4.6;54;https://websosona.netlify.app/dieselvila-tona-s-l-tona/;1;2026-11-24T10:48:24;;
 contactado;Auto-reparaciones Casas;Torelló;+34 938 59 27 64;autojcasas@hotmail.com;http://autojcasas.wixsite.com/autojcasas;abandonada;4.6;69;https://websosona.netlify.app/auto-reparaciones-casas-torello/;2;2026-11-24T10:39:38;;
 contactado;Auto Diesel Vic, S.A;Vic;+34 938 89 03 75;admin@autodieselvic.com;http://www.autodieselvic.com.es/;no_https,anticuada;4.5;178;https://websosona.netlify.app/auto-diesel-vic-s-a-vic/;2;2026-11-23T10:04:15;;
 contactado;Taller Paddock - Exclusives del Carburador - Reparación de Carburadores - Eurotaller;Vic;+34 938 86 65 20;tallerpaddock@outlook.com;http://www.tallerpaddock.com/;no_https;4.5;91;https://websosona.netlify.app/taller-paddock-exclusives-del-carburador-reparacion-de-carbu/;2;2026-11-24T10:29:43;;
@@ -235,7 +236,6 @@ objetivo;Rodavic - Taller reparació carrocería i pintura;Gurb;+34 938 89 28 97
 objetivo;M.Terricabras S.L.;Gurb;+34 938 86 24 78;info@terricabras.cat;http://www.terricabras.cat/;no_https;4.7;38;https://websosona.netlify.app/m-terricabras-s-l-gurb/;0;;;
 objetivo;Obras Codinachs Canellas, S.L.;Sant Julià de Vilatorta;+34 667 52 66 47;toni@codinachs.cat;http://codinachs.cat/;no_movil;0;0;https://websosona.netlify.app/obras-codinachs-canellas-s-l-sant-julia-de-vilatorta/;0;;;
 objetivo;Gerard Costa taller de planxisteria;Taradell;+34 633 53 92 39;gc.planxisteria@hotmail.com;http://gerardcosta.cat/;no_https;4.8;26;https://websosona.netlify.app/gerard-costa-taller-de-planxisteria-taradell/;0;;;
-objetivo;Dieselvila Tona, S.L;Tona;+34 938 12 45 85;info@netejafiltreparticules.com;https://www.netejafiltreparticules.com/;abandonada;4.6;54;https://websosona.netlify.app/dieselvila-tona-s-l-tona/;0;;;
 objetivo;Picó Motor;Tona;+34 938 12 43 30;picomotor@picomotor.net;http://picomotor.net/;no_https;4.4;23;https://websosona.netlify.app/pico-motor-tona/;0;;;
 objetivo;Joan Serra Paleta SL;Torelló;+34 938 59 32 55;js@joanserrapaleta.com;http://joanserrapaleta.com/;abandonada;5;3;https://websosona.netlify.app/joan-serra-paleta-sl-torello/;0;;;
 objetivo;IXA (Instal·lacions Xevi Arcos);Torelló;+34 937 82 70 40;xevi.arcos@hotmail.com;http://www.xeviarcos.es/;no_https,no_movil;5;1;https://websosona.netlify.app/ixa-installacions-xevi-arcos-torello/;0;;;
