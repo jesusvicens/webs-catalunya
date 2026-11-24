@@ -1,21 +1,27 @@
-# Cada 20 minuts en horari laboral: pont de respostes, enviament d'1 correu i entrega de webs pagades.
+# Cicle d'enviaments. Mode «lot»: envia tota la quota del dia d'un en un (cada ~4 min) i fa de pont de respostes.
+# El dispara la tasca programada de Claude (9:47 i 14:47) i, com a reserva, el cron de GitHub.
 name: Cicle (respostes, enviaments, entregues)
 on:
   schedule:
-    - cron: "*/20 7-18 * * 1-5"   # UTC; el script només envia dins HORA_INICIO-HORA_FIN (hora de Madrid)
+    - cron: "5 8-16 * * 1-5"   # reserva (UTC). GitHub pot endarrerir o saltar execucions.
   workflow_dispatch:
+    inputs:
+      mode:
+        description: "un (1 correu) o lot (tota la quota del dia)"
+        default: "lot"
 concurrency:
-  group: webs-dades
+  group: webs-cicle
   cancel-in-progress: false
 permissions:
   contents: write
 jobs:
   cicle:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 80
     env:
       TZ: Europe/Madrid
       PYTHONUTF8: "1"
+      VOLTES: ${{ github.event.inputs.mode == 'un' && '1' || (github.event_name == 'schedule' && '1' || '15') }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -30,17 +36,20 @@ jobs:
           if [ -z "$CONFIG_ENV" ]; then echo "Falta el secret CONFIG_ENV"; exit 1; fi
           printf '%s\n' "$CONFIG_ENV" > config.env
           echo "MAX_POR_EJECUCION=1" >> config.env
-      - name: Pont de respostes
-        run: python 7_relay.py
-      - name: Enviaments i seguiments
-        run: python 5_enviar.py --real
-      - name: Entrega de webs pagades
-        run: python 6_entregar.py
-      - name: Desa canvis
-        if: always()
+          git config user.name "Claude"; git config user.email "noreply@anthropic.com"
+      - name: Pont, enviaments i entregues
         run: |
-          rm -f config.env
-          git config user.name "Claude"
-          git config user.email "noreply@anthropic.com"
-          git add datos/leads.json datos/leads.csv 2>/dev/null || true
-          git diff --cached --quiet || (git commit -qm "Dades: cicle $(date +'%Y-%m-%d %H:%M')" && git pull -q --rebase && git push -q)
+          desa() { git add datos/leads.json datos/leads.csv 2>/dev/null || true
+                   git diff --cached --quiet || { git commit -qm "Dades: cicle $(date +'%Y-%m-%d %H:%M')"; git pull -q --rebase && git push -q; }; }
+          python 6_entregar.py || true
+          for i in $(seq 1 $VOLTES); do
+            python 7_relay.py || true
+            python 5_enviar.py --real || true
+            desa
+            [ "$i" -lt "$VOLTES" ] && sleep $((200 + RANDOM % 120))
+          done
+          python 7_relay.py || true
+          python 6_entregar.py || true
+          desa
+      - if: always()
+        run: rm -f config.env
