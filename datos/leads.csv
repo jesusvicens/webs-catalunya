@@ -1,4 +1,5 @@
 ﻿estado;nombre;municipio;telefono;email;web;motivo;rating;n_resenas;demo_url;enviados;ultimo_envio;respondio;notas
+contactado;Mirvi motor, S.L.;Aiguafreda;+34 938 44 00 23;mirvimotor@gmail.com;https://es-es.facebook.com/mirvimotor;sin_web;4.6;33;https://websosona.netlify.app/mirvi-motor-s-l-aiguafreda/;1;2026-11-24T11:01:41;;
 contactado;Garaje Estación Vic;Gurb;+34 938 86 01 77;info@garatge-estacio.com;http://www.garatge-estacio.com/;abandonada;4.5;108;https://websosona.netlify.app/garaje-estacion-vic-gurb/;2;2026-11-24T10:34:25;;
 contactado;Rodavic - Taller reparació carrocería i pintura;Gurb;+34 938 89 28 97;info@rodavic.com;http://www.rodavic.com/;no_https,abandonada;5.0;41;https://websosona.netlify.app/rodavic-taller-reparacio-carroceria-i-pintura-gurb/;1;2026-11-24T10:52:17;;
 contactado;M.Terricabras S.L.;Gurb;+34 938 86 24 78;info@terricabras.cat;http://www.terricabras.cat/;no_https;4.7;38;https://websosona.netlify.app/m-terricabras-s-l-gurb/;1;2026-11-24T10:56:02;;
@@ -230,7 +231,6 @@ descartado;Obras y servicios viladrau;Viladrau;+34 657 52 44 82;vimmo@vimmo.cat;
 descartado;Aspen Construccions i Reformes S.L.;Viladrau;+34 648 66 96 27;oriol@aspen.cat;http://aspen.cat/;;1;1;;0;;;
 descartado;Instal·lacions Portet;Viladrau;+34 938 84 93 56;pere@portet.cat;http://www.portet.cat/;;4.5;11;;0;;;
 descartado;Aszende;·;+34 900 224 365;info@aszende.com;https://www.aszende.com/;;5;5;;0;;;
-objetivo;Mirvi motor, S.L.;Aiguafreda;+34 938 44 00 23;mirvimotor@gmail.com;https://es-es.facebook.com/mirvimotor;sin_web;4.6;33;https://websosona.netlify.app/mirvi-motor-s-l-aiguafreda/;0;;;
 objetivo;Auto Taller Calldetenes;Calldetenes;+34 938 68 99 16;atcmecanic@gmail.com;https://www.facebook.com/autotallercalldetenes/;sin_web;4.8;28;https://websosona.netlify.app/auto-taller-calldetenes-calldetenes/;0;;;
 objetivo;Centelles Motor;Centelles;+34 938 81 04 91;centellesmotor@gmail.com;https://www.facebook.com/centellesmotor/;sin_web;4.9;17;https://websosona.netlify.app/centelles-motor-centelles/;0;;;
 objetivo;osonatech;Els Hostalets de Balenyà;+34 682 13 83 49;info@osonatech.com;http://www.osonatech.com/;web_caida;0;0;https://websosona.netlify.app/osonatech-els-hostalets-de-balenya/;0;;;

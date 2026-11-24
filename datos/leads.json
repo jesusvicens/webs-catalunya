@@ -4147,9 +4147,15 @@
   "categoria": "Taller de automóviles",
   "lat": "41.7650187",
   "lng": "2.2523497",
-  "estado": "objetivo",
+  "estado": "contactado",
   "creado": "2026-11-18T16:32:20",
-  "envios": [],
+  "envios": [
+   {
+    "paso": 0,
+    "fecha": "2026-11-24T11:01:41",
+    "message_id": "<179551449977.2877.6147708495947625842@gmail.com>"
+   }
+  ],
   "motivo": "sin_web",
   "generado": true,
   "demo_url": "https://websosona.netlify.app/mirvi-motor-s-l-aiguafreda/"
